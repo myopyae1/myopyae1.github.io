@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function with parameter
+        function add (num1,num2){
+            let result = num1+num2;
+            return result;
+        }
+        let addResult = add(23,32);
+        document.write(`<h3>Add result: ${addResult}</h3>`);
+
+
+
+        function sub (num1 = 50 , num2 = 30){
+            let result = num1 - num2;
+            return result;
+        }
+        let subResult = sub();
+        let subResult1 = sub (100,30);
+        document.write(`<h3>Sub Result with Defult Parameter: ${subResult}</h3>`);
+        document.write (`<h3>Sub Result With Argument: ${subResult1}</h3>`);
+
+
+
+
+        function getSize(length, width, height){
+            let area = length * width;
+            let volume = length * width * height;
+            let sizes = [area, volume];
+            return sizes;
+        }
+        let area = getSize(3,2,3)[0];
+        let volume = getSize(3,2,3)[1];
+        document.write(`<h3>Area is : ${area}</h3>`);
+        document.write(`<h3>Volume is : ${volume}</h3>`);
+
+
+
+        //Object
+        
+        let hotel = {
+            name: 'XYZ Hotel',
+            rooms: 40,
+            booked: 25,
+            gym: true,
+            roomTypes:['Twin','Double','Suite'],
+
+            checkAvailability: function(){
+                return this.rooms - this.booked;
+            }
+        }
+
+        let hotelName = hotel.name;
+        let roomFree = hotel.checkAvailability();
+        document.write(`<h3>Hotel Name is ${hotelName}</h3>`);
+        document.write(`<h3>Room Free is ${roomFree}</h3>`);
+
+        hotel.pool = false;
+        document.write(`<h3>Pool is ${hotel.pool}</h3>`);
+        
+        console.log (hotel);
+        delete hotel.pool;
+            
+        
+
+
+
+    </script>
+</body>
+</html>
